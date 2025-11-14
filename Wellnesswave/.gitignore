@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Additional ignores for organized project
+organized-project/node_modules/
+organized-project/dist/
+organized-project/.env.local
+organized-project/data/db/
+organized-project/mongodb/
+
+# Backend specific
+organized-project/wellness-wave-backend/node_modules/
+organized-project/wellness-wave-backend/dist/
+organized-project/wellness-wave-backend/build/
+organized-project/wellness-wave-backend/.env.local
+organized-project/wellness-wave-backend/data/db/
+organized-project/wellness-wave-backend/mongodb/

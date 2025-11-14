@@ -1,0 +1,111 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Production builds
+/dist
+/dist-ssr
+
+# Local environment files
+.env*
+!.env.example
+
+# IDE and editor files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+__MACOSX
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by Jest
+coverage/
+
+# Temporary folders
+.tmp/
+temp/
+
+# Build outputs
+build/
+out/
+
+# Database files
+*.db
+*.sqlite
+
+# Vite specific
+.vite/
+# Local Vite server cache
+.local
+
+# Typescript
+*.tsbuildinfo
+
+# Testing
+.nyc_output/
+.coverage/
+.junit-cache/
+
+# Serverless directories
+.serverless/
+
+# FuseBox
+.fusebox/
+
+# TernJS
+.tern-port
+
+# MongoDB
+/mongodb/
+/data/db/
+
+# Log files
+*.log
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js specific
+.next/
+out/
+
+# Nuxt.js specific
+.nuxt/
+.nuxt-dist/
+
+# Vue CLI specific
+public/dist/
+public/index.html
+
+# SvelteKit specific
+.svelte-kit/
