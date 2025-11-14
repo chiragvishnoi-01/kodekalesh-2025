@@ -1,0 +1,31 @@
+services:
+  # Frontend Service
+  - type: web
+    name: wellness-wave-frontend
+    env: node
+    buildCommand: npm run build
+    startCommand: npm run preview
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://wellness-wave-backend.onrender.com/api
+    domains:
+      - wellness-wave-frontend.onrender.com
+
+  # Backend Service
+  - type: web
+    name: wellness-wave-backend
+    env: node
+    buildCommand: cd wellness-wave-backend && npm run build
+    startCommand: cd wellness-wave-backend && npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+    domains:
+      - wellness-wave-backend.onrender.com

@@ -8,7 +8,8 @@
     "build": "tsc --project tsconfig.json",
     "test": "jest",
     "clean": "rimraf dist",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "start:dev": "node dist/server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
