@@ -4,6 +4,7 @@ import ImageUpload from '../features/ImageUpload';
 import { useTranslation } from '../../hooks/useTranslation';
 import CommonDashboardElements from './CommonDashboardElements';
 import { motion } from 'framer-motion';
+import WaveDivider from '../ui/WaveDivider';
 
 const UserDashboard: React.FC = () => {
     const { t } = useTranslation();
@@ -32,7 +33,7 @@ const UserDashboard: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
-                <Card title={t('analyze_water_image_title')}>
+                <Card title={t('analyze_water_image_title')} className="shadow-xl border border-base-300">
                     <p className="text-base-content mb-4 text-lg">
                         {t('analyze_water_image_desc')}
                         <strong className="text-primary"> {t('analyze_water_image_disclaimer')}</strong>
@@ -41,16 +42,7 @@ const UserDashboard: React.FC = () => {
                 </Card>
             </motion.div>
             
-            <motion.div 
-                className="border-t-2 border-dashed border-base-300 my-12 relative"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-            >
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-base-200 px-4 py-2 rounded-full">
-                    <span className="text-primary font-bold">OR</span>
-                </div>
-            </motion.div>
+            <WaveDivider />
             
             <motion.div
                 className="text-center"

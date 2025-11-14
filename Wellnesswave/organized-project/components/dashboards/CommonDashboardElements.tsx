@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import Card from '../ui/Card';
 import { generateRiskAnalysis, getDailyAIUpdate } from '../../services/geminiService';
@@ -11,6 +10,7 @@ import { AIRiskAnalysis } from '../../types';
 import SystemFlowchart from '../features/SystemFlowchart';
 import { useData } from '../../context/DataContext';
 import LatestReports from '../features/LatestReports';
+import WaveDivider from '../ui/WaveDivider';
 
 const CommonDashboardElements: React.FC = () => {
     const [aiRiskOutput, setAiRiskOutput] = useState<AIRiskAnalysis | null>(null);
@@ -52,7 +52,7 @@ const CommonDashboardElements: React.FC = () => {
         <div className="space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2">
-                    <Card title={t('risk_hotspots_title')} icon={<GlobeIcon className="h-6 w-6"/>} className="h-full shadow-lg">
+                    <Card title={t('risk_hotspots_title')} icon={<GlobeIcon className="h-6 w-6"/>} className="h-full shadow-xl border border-base-300">
                          <p className="mb-4 text-gray-600">{t('risk_hotspots_desc')}</p>
                          <div className="h-[400px] bg-base-200 rounded-lg overflow-hidden flex items-center justify-center border border-base-300">
                             <RiskGlobe riskPoints={aiRiskOutput?.riskData} />
@@ -60,13 +60,13 @@ const CommonDashboardElements: React.FC = () => {
                     </Card>
                 </div>
                 <div className="lg:col-span-1">
-                     <Card title={t('ai_prediction_title')} icon={<AlertTriangleIcon className="h-6 w-6"/>} className="h-full shadow-lg">
+                     <Card title={t('ai_prediction_title')} icon={<AlertTriangleIcon className="h-6 w-6"/>} className="h-full shadow-xl border border-base-300">
                         <div className="flex flex-col h-full">
                             <p className="text-gray-600 mb-4">{t('ai_prediction_desc')}</p>
                             {isLoading ? (
                                 <div className="flex-grow flex items-center justify-center">
                                     <div className="text-center">
-                                        <LoaderIcon className="h-12 w-12 mx-auto text-primary"/>
+                                        <LoaderIcon className="h-12 w-12 mx-auto text-primary animate-spin"/>
                                         <p className="mt-2">{t('analyzing_data')}</p>
                                     </div>
                                 </div>
@@ -85,7 +85,9 @@ const CommonDashboardElements: React.FC = () => {
                 </div>
             </div>
 
-            <Card title={t('data_trends_title')} className="shadow-lg">
+            <WaveDivider />
+
+            <Card title={t('data_trends_title')} className="shadow-xl border border-base-300">
                 <div className="text-center mb-4 border-b border-base-300 pb-4">
                      <h4 className="font-semibold text-lg text-primary">{t('ai_chart_update_title')}</h4>
                      <p className="text-sm text-gray-500 mt-1">{t('ai_chart_update_desc')}</p>
@@ -96,15 +98,21 @@ const CommonDashboardElements: React.FC = () => {
                 <TrendChart waterData={waterReports} diseaseData={diseaseReports} />
             </Card>
 
+            <WaveDivider />
+
             <LatestReports />
 
-            <Card title={t('system_flow_title')} icon={<CubeIcon className="h-6 w-6"/>} className="shadow-lg">
+            <WaveDivider />
+
+            <Card title={t('system_flow_title')} icon={<CubeIcon className="h-6 w-6"/>} className="shadow-xl border border-base-300">
                 <SystemFlowchart />
             </Card>
 
-            <Card title={t('precautions_title')} icon={<CheckCircleIcon className="h-6 w-6" />} className="shadow-lg">
+            <WaveDivider />
+
+            <Card title={t('precautions_title')} icon={<CheckCircleIcon className="h-6 w-6" />} className="shadow-xl border border-base-300">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-gray-700">
-                    <div>
+                    <div className="bg-base-200 p-4 rounded-lg border border-base-300">
                         <h4 className="font-bold text-lg text-primary mb-2">{t('precautions_individuals_title')}</h4>
                         <ul className="list-disc list-inside space-y-1">
                             <li>{t('precautions_individuals_1')}</li>
@@ -113,7 +121,7 @@ const CommonDashboardElements: React.FC = () => {
                             <li>{t('precautions_individuals_4')}</li>
                         </ul>
                     </div>
-                    <div>
+                    <div className="bg-base-200 p-4 rounded-lg border border-base-300">
                         <h4 className="font-bold text-lg text-secondary mb-2">{t('precautions_communities_title')}</h4>
                         <ul className="list-disc list-inside space-y-1">
                             <li>{t('precautions_communities_1')}</li>
@@ -122,7 +130,7 @@ const CommonDashboardElements: React.FC = () => {
                             <li>{t('precautions_communities_4')}</li>
                         </ul>
                     </div>
-                    <div>
+                    <div className="bg-base-200 p-4 rounded-lg border border-base-300">
                         <h4 className="font-bold text-lg text-accent mb-2">{t('precautions_help_title')}</h4>
                         <ul className="list-disc list-inside space-y-1">
                             <li>{t('precautions_help_1')}</li>
@@ -131,7 +139,7 @@ const CommonDashboardElements: React.FC = () => {
                             <li>{t('precautions_help_4')}</li>
                         </ul>
                     </div>
-                     <div>
+                     <div className="bg-base-200 p-4 rounded-lg border border-base-300">
                         <h4 className="font-bold text-lg text-warning mb-2">{t('precautions_response_title')}</h4>
                         <ul className="list-disc list-inside space-y-1">
                             <li>{t('precautions_response_1')}</li>

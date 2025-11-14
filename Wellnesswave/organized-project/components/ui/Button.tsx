@@ -16,13 +16,13 @@ const Button: React.FC<ButtonProps> = ({
     className = '', 
     ...props 
 }) => {
-    const baseStyles = 'inline-flex items-center justify-center rounded-xl font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed button-press';
+    const baseStyles = 'inline-flex items-center justify-center rounded-xl font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed button-press shadow-md hover:shadow-lg';
 
     const variantStyles = {
-        primary: 'bg-primary text-primary-content hover:bg-primary-focus focus:ring-primary shadow-card hover:shadow-card-hover',
-        secondary: 'bg-secondary text-primary hover:bg-opacity-80 focus:ring-secondary shadow-card hover:shadow-card-hover',
+        primary: 'bg-primary text-primary-content hover:bg-primary-focus focus:ring-primary',
+        secondary: 'bg-secondary text-primary hover:bg-opacity-80 focus:ring-secondary',
         ghost: 'bg-transparent text-base-content hover:bg-base-300 focus:ring-primary',
-        danger: 'bg-error text-white hover:bg-red-600 focus:ring-error shadow-card hover:shadow-card-hover',
+        danger: 'bg-error text-white hover:bg-red-600 focus:ring-error',
     };
 
     const sizeStyles = {
