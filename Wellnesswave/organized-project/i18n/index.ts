@@ -14,6 +14,7 @@ export const DEFAULT_LANGUAGE = 'en';
 type TranslationKeys = {
     // Navbar
     notifications: string;
+    no_notifications: string;
     welcome: string;
     logout: string;
     login: string;
@@ -174,6 +175,7 @@ type TranslationKeys = {
 export const translations: { [key: string]: TranslationKeys } = {
     en: {
         notifications: 'Notifications',
+        no_notifications: 'No notifications yet',
         welcome: 'Welcome, {{name}}',
         logout: 'Logout',
         login: 'Login',
@@ -317,6 +319,7 @@ export const translations: { [key: string]: TranslationKeys } = {
     },
     hi: {
         notifications: 'सूचनाएं',
+        no_notifications: 'अभी तक कोई सूचना नहीं',
         welcome: 'स्वागत है, {{name}}',
         logout: 'लॉग आउट',
         login: 'लॉग इन करें',

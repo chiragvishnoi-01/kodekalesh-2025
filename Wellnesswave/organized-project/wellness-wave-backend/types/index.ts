@@ -1,29 +1,8 @@
-wellness-wave-backend
-├── src
-│   ├── config
-│   │   └── database.ts
-│   ├── controllers
-│   │   ├── authController.ts
-│   │   └── userController.ts
-│   ├── middleware
-│   │   ├── auth.ts
-│   │   └── validation.ts
-│   ├── models
-│   │   └── userModel.ts
-│   ├── routes
-│   │   ├── authRoutes.ts
-│   │   └── userRoutes.ts
-│   ├── types
-│   │   └── index.ts
-│   ├── utils
-│   │   └── logger.ts
-│   ├── app.ts
-│   └── server.ts
-├── tests
-│   └── integration
-│       └── auth.test.ts
-├── .env
-├── .gitignore
-├── package.json
-├── tsconfig.json
-└── README.md
+// Type definitions for wellness-wave-backend
+// Project: Wellness Wave Backend
+// Definitions by: Your Name
+
+/// <reference path="./express/index.d.ts" />
+
+// Export all custom types
+export * from './express';

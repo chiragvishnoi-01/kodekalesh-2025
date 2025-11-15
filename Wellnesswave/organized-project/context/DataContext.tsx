@@ -126,10 +126,12 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         const mockWaterReports = generateMockWaterReports(15);
         const mockDiseaseReports = generateMockDiseaseReports(10);
         
+        // Set the mock data in state
         setWaterReports(mockWaterReports);
         setDiseaseReports(mockDiseaseReports);
         
-        console.log('Mock data generated successfully!');
+        console.log('Mock data generated successfully!', { mockWaterReports, mockDiseaseReports });
+        alert('Mock data generated successfully!'); // Add alert to confirm it's working
     };
 
     return (

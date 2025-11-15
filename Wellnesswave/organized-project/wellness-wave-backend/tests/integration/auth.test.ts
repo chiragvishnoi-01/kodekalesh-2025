@@ -1,13 +1,13 @@
 import request from 'supertest';
 import app from '../../src/app';
-import { connect, disconnect } from '../../src/config/database';
+import connectDB from '../../src/config/database';
 
 beforeAll(async () => {
-    await connect();
+    await connectDB();
 });
 
 afterAll(async () => {
-    await disconnect();
+    // Mongoose disconnect is handled automatically
 });
 
 describe('Authentication Integration Tests', () => {

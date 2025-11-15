@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
@@ -33,9 +32,10 @@ const AppContent: React.FC = () => {
     };
     
     return (
-        <div className="min-h-screen bg-gradient-to-br from-base-200 to-base-100 text-base-content flex flex-col">
+        <div className="min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300 text-base-content flex flex-col">
+            <div className="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,rgba(0,0,0,0)_70%)]"></div>
             <Navbar />
-            <main className="flex-grow container mx-auto px-4 py-8">
+            <main className="flex-grow container mx-auto px-4 py-6 md:py-8">
                 <PageTransition>
                     {renderDashboard()}
                 </PageTransition>

@@ -15,6 +15,8 @@ Wellness Wave is a comprehensive water quality and disease outbreak monitoring s
 - **🎤 Voice Reporting**: Report issues using voice commands for accessibility
 - **🌐 Multilingual Support**: Available in multiple languages including Hindi, Bengali, and English
 - **📊 Data Visualization**: Interactive charts and 3D globes for comprehensive data representation
+- **✨ Enhanced UI/UX**: Modern Tailwind CSS styling with animations and glass morphism effects
+- **🌟 New Components**: Hero section, feature highlights, testimonials, and call-to-action sections
 
 ## 🛠 Technology Stack
 
@@ -96,7 +98,7 @@ npm run dev
 ```
 
 The application will be available at:
-- **Frontend**: http://localhost:3000
+- **Frontend**: http://localhost:3001 (port may vary if 3000 is in use)
 - **Backend API**: http://localhost:9080
 
 ## 📁 Project Structure
@@ -125,6 +127,20 @@ organized-project/
 ├── App.tsx              # Main application component
 └── index.tsx            # Application entry point
 ```
+
+## 🎨 Recent UI/UX Enhancements
+
+The website has been significantly enhanced with modern UI/UX improvements:
+
+- **Enhanced Glass Effects**: Improved glass morphism throughout the interface
+- **Gradient Text**: Added gradient text effects for headings
+- **Animated Backgrounds**: Implemented animated gradient backgrounds
+- **Hover Animations**: Added subtle hover animations to cards and buttons
+- **Pulse Effects**: Added pulse animations to key elements
+- **Floating Elements**: Implemented floating animations for icons
+- **New Components**: Hero section, feature highlights, testimonials, and call-to-action sections
+
+For detailed information about all enhancements, see [WEBSITE_ENHANCEMENTS.md](WEBSITE_ENHANCEMENTS.md).
 
 ## 🤝 Contributing
 

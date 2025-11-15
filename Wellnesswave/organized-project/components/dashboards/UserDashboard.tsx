@@ -17,15 +17,18 @@ const UserDashboard: React.FC = () => {
             transition={{ duration: 0.5 }}
         >
             <motion.div
-                className="text-center py-4"
+                className="text-center py-6"
                 initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
-                <h1 className="text-4xl font-bold text-base-content bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4">
                     {t('user_dashboard_title')}
                 </h1>
-                <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mt-4"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
+                <p className="mt-6 text-base-content/80 max-w-3xl mx-auto text-lg">
+                    Analyze water samples, view regional health trends, and contribute to community health monitoring.
+                </p>
             </motion.div>
             
             <motion.div
@@ -50,10 +53,13 @@ const UserDashboard: React.FC = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
             >
-                <h2 className="text-3xl font-bold text-center text-base-content bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <h2 className="text-2xl md:text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4">
                     {t('public_dashboard_title')}
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-4"></div>
+                <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto"></div>
+                <p className="mt-4 text-base-content/80 max-w-2xl mx-auto">
+                    Access the same regional health insights available to public health officials.
+                </p>
             </motion.div>
             
             <motion.div
