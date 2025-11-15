@@ -16,8 +16,8 @@ services:
   - type: web
     name: wellness-wave-backend
     env: node
-    buildCommand: cd wellness-wave-backend && npm run build
-    startCommand: cd wellness-wave-backend && npm start
+    buildCommand: npm run build
+    startCommand: npm start
     envVars:
       - key: PORT
         value: 10000
