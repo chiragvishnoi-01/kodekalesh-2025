@@ -1,6 +1,11 @@
 import express from 'express';
 import serverless from 'serverless-http';
 import app from '../src/app';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+
+// Load environment variables
+dotenv.config();
 
 const expressApp = express();
 expressApp.use('/api', app);
@@ -19,4 +24,15 @@ expressApp.get('/', (req, res) => {
   });
 });
 
+// Connect to MongoDB
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/wellnesswave';
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
 export default serverless(expressApp);
+export const config = {
+  api: {
+    bodyParser: true,
+  },
+};

@@ -1,10 +1,19 @@
 import { Request, Response } from 'express';
-import { User } from '../models/userModel';
+import { User, IUser } from '../models/userModel';
 
-// Fetch user details by ID
-export const getUserById = async (req: Request, res: Response) => {
+interface CustomRequest extends Request {
+    user?: IUser;
+}
+
+// Fetch user profile
+export const getUserById = async (req: CustomRequest, res: Response) => {
     try {
-        const user = await User.findById(req.params.id);
+        const userId = req.user?._id;
+        if (!userId) {
+            return res.status(401).json({ message: 'User not authenticated' });
+        }
+        
+        const user = await User.findById(userId);
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -14,10 +23,15 @@ export const getUserById = async (req: Request, res: Response) => {
     }
 };
 
-// Update user details
-export const updateUser = async (req: Request, res: Response) => {
+// Update user profile
+export const updateUser = async (req: CustomRequest, res: Response) => {
     try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const userId = req.user?._id;
+        if (!userId) {
+            return res.status(401).json({ message: 'User not authenticated' });
+        }
+        
+        const user = await User.findByIdAndUpdate(userId, req.body, { new: true });
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -28,9 +42,14 @@ export const updateUser = async (req: Request, res: Response) => {
 };
 
 // Delete user
-export const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (req: CustomRequest, res: Response) => {
     try {
-        const user = await User.findByIdAndDelete(req.params.id);
+        const userId = req.user?._id;
+        if (!userId) {
+            return res.status(401).json({ message: 'User not authenticated' });
+        }
+        
+        const user = await User.findByIdAndDelete(userId);
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
